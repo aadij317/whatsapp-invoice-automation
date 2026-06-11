@@ -2,149 +2,203 @@
 
 > Transforming WhatsApp into an AI-powered invoicing assistant for small businesses.
 
-## 🚀 Introduction
+![Architecture](docs/architecture.png)
 
-Managing invoices is a repetitive and time-consuming task for many small business owners, local shopkeepers, freelancers, and service providers. Most existing billing solutions are either expensive, overly complex, or require dedicated software and training.
+---
 
-This project reimagines the invoicing process by turning WhatsApp—an application already used daily by millions of businesses—into a complete invoice generation platform.
+## 🚀 Overview
 
-With a simple WhatsApp message, a business owner can generate a professional PDF invoice, automatically process invoice details using Artificial Intelligence, securely store the document in the cloud, and instantly deliver it to the customer via email.
+WhatsApp Invoice Automation is an end-to-end business process automation system that enables shop owners and small businesses to generate professional PDF invoices directly from WhatsApp messages.
 
-The entire workflow is fully automated and requires no manual document creation, formatting, or sharing.
+Instead of manually creating invoices, formatting PDFs, uploading files, and sending emails, a business owner simply sends product details through WhatsApp. The system automatically processes the request, generates a PDF invoice, stores it securely, and delivers it to the customer via email.
+
+The entire workflow is orchestrated using n8n and integrates multiple services including Gupshup, Gemini AI, Gotenberg, Cloudinary, and Email APIs.
 
 ---
 
 ## 🎯 Problem Statement
 
-Small businesses often struggle with:
+Small businesses frequently face challenges such as:
 
-* Manual invoice preparation
-* Repetitive data entry
+* Manual invoice creation
+* Repetitive administrative work
+* Human errors during billing
 * Delayed invoice delivery
-* Human errors in billing
 * Lack of affordable automation tools
-* Complex accounting software
+* Complex billing software
 
-For businesses handling multiple customer orders every day, these inefficiencies accumulate into significant operational overhead.
+For local stores and service providers, these inefficiencies reduce productivity and consume valuable business time.
 
 ---
 
 ## 💡 Solution
 
-WhatsApp Invoice Automation eliminates manual invoicing by combining conversational AI with workflow automation.
+This project transforms WhatsApp into an intelligent invoice generation platform.
 
-Instead of opening billing software, creating PDFs, and manually emailing customers, the business owner simply sends a WhatsApp message such as:
+A business owner can send a simple message such as:
 
-Create invoice for Aadi Jain
-
-Email: [aadi@example.com](mailto:aadi@example.com)
-
-2 Paint Brushes - ₹300
-
-1 Hammer - ₹500
-
-Total - ₹800
+```text
+1 T-Shirt ₹749
+1 Trouser ₹599
+1 Warmer ₹649
+```
 
 The system automatically:
 
-1. Receives the request through WhatsApp
-2. Extracts invoice information using Gemini AI
-3. Validates and structures the data
-4. Generates a professional PDF invoice
-5. Uploads the invoice to cloud storage
-6. Emails the invoice to the customer
+1. Receives the WhatsApp message
+2. Processes invoice information
+3. Extracts structured billing data using AI
+4. Generates a professional invoice template
+5. Converts the invoice into PDF format
+6. Uploads the PDF to cloud storage
+7. Delivers the invoice through email
+8. Sends workflow completion updates
 
-The entire process is completed within seconds.
-
----
-
-## 🌟 Why This Project Matters
-
-This project demonstrates how modern AI systems can be integrated into everyday business workflows to eliminate repetitive administrative tasks.
-
-Rather than building another billing application, this solution leverages platforms that businesses already use, reducing adoption barriers and improving operational efficiency.
-
-The project showcases practical applications of:
-
-* Artificial Intelligence
-* Workflow Automation
-* Cloud Services
-* API Integrations
-* Document Generation
-* Business Process Optimization
+The entire process completes without manual intervention.
 
 ---
 
-## 🔥 Key Highlights
+## ✨ Key Features
 
-✅ AI-powered invoice extraction using Gemini
+### 📱 WhatsApp-Based Invoice Creation
 
-✅ WhatsApp-first user experience
+Generate invoices directly through WhatsApp messages.
 
-✅ Fully automated workflow orchestration using n8n
+### 🧠 AI-Assisted Processing
 
-✅ PDF invoice generation through Gotenberg
+Gemini AI helps process and structure invoice information received in natural language format.
 
-✅ Cloud-based document storage via Cloudinary
+### 📄 Automated PDF Generation
 
-✅ Automated email delivery system
+Invoices are automatically converted into professional PDF documents using Gotenberg.
 
-✅ Zero manual invoice formatting
+### ☁️ Cloud Storage Integration
 
-✅ Designed for small businesses and local shop owners
+Generated PDFs are securely uploaded and stored through Cloudinary.
 
----
+### 📧 Automated Email Delivery
 
-## 🏢 Real-World Use Cases
+Invoices are automatically delivered to customers via email.
 
-### Retail Stores
+### ⚙️ Workflow Automation
 
-Generate invoices directly from customer purchase details shared through WhatsApp.
+The entire process is orchestrated through n8n workflows.
 
-### Freelancers
+### 🚀 Minimal Human Intervention
 
-Create and deliver invoices without maintaining separate billing software.
-
-### Local Service Providers
-
-Instantly generate invoices for repair, maintenance, and consulting services.
-
-### Small Businesses
-
-Automate billing operations while maintaining professional documentation.
-
-### Home-Based Businesses
-
-Handle customer billing using only a smartphone and WhatsApp.
+Reduces manual work and improves operational efficiency.
 
 ---
 
-## 🛠️ Technology Stack
+## 🏗 System Architecture
 
-| Layer                   | Technology           |
+![Architecture](docs/architecture.png)
+
+---
+
+## ⚙ Workflow
+
+```text
+Shop Owner (WhatsApp)
+        │
+        ▼
+Gupshup WhatsApp API
+        │
+        ▼
+n8n Workflow Engine
+        │
+        ▼
+Gemini AI Processing
+        │
+        ▼
+JavaScript Validation & Processing
+        │
+        ▼
+Invoice Template Generation
+        │
+        ▼
+Gotenberg PDF Generation
+        │
+        ▼
+Cloudinary Storage
+        │
+        ▼
+Email Delivery
+        │
+        ▼
+Customer
+```
+
+---
+
+## 🔄 Workflow Preview
+
+The automation workflow was built using n8n and integrates invoice processing, PDF generation, cloud storage, and automated delivery.
+
+![Workflow](screenshots/workflow.png)
+
+---
+
+## 📱 WhatsApp Input
+
+The shop owner sends invoice details directly through WhatsApp.
+
+![WhatsApp Input](screenshots/whatsapp-preview-1.jpg)
+
+![WhatsApp Input](screenshots/whatsapp-preview-2.jpg)
+
+---
+
+## 📄 Generated Invoice
+
+The workflow automatically generates professional PDF invoices.
+
+![Invoice](screenshots/generated-invoice-1.jpg)
+
+![Invoice](screenshots/generated-invoice-2.jpg)
+
+![Invoice](screenshots/generated-invoie-3.jpg)
+
+---
+
+## 📧 Automated Email Delivery
+
+After invoice generation, the PDF is automatically sent to the customer through email.
+
+![Email Delivery](screenshots/email-delivery-1.jpg)
+
+![Email Delivery](screenshots/email-delivery-2.jpg)
+
+![Email Delivery](screenshots/email-delivery-3.jpg)
+
+---
+
+## 🛠 Technology Stack
+
+| Category                | Technology           |
 | ----------------------- | -------------------- |
 | Workflow Automation     | n8n                  |
 | Messaging Platform      | Gupshup WhatsApp API |
-| Artificial Intelligence | Google Gemini AI     |
+| Artificial Intelligence | Gemini AI            |
+| Data Processing         | JavaScript           |
 | PDF Generation          | Gotenberg            |
 | Cloud Storage           | Cloudinary           |
-| Email Delivery          | SMTP / Gmail API     |
-| Data Processing         | JavaScript           |
+| Email Delivery          | SMTP / Gmail         |
+| Communication           | WhatsApp             |
 
 ---
 
 ## 📈 Business Impact
 
-The automation significantly reduces the time and effort required to create and distribute invoices.
-
 ### Before Automation
 
-* Collect customer details
+* Receive order details
 * Create invoice manually
 * Format invoice
 * Export PDF
-* Upload or attach file
-* Send email
+* Upload file
+* Compose email
+* Send invoice
 
 ### After Automation
 
@@ -152,21 +206,89 @@ The automation significantly reduces the time and effort required to create and 
 
 That's it.
 
-The entire invoicing workflow runs automatically in the background.
+Everything else is handled automatically.
 
 ---
 
-## 🎓 Skills Demonstrated
+## 🎯 Real World Use Cases
 
-This project highlights expertise in:
+### Retail Stores
 
-* Workflow Engineering
+Generate invoices directly from WhatsApp orders.
+
+### Hardware Shops
+
+Quick invoice creation for customer purchases.
+
+### Kirana Stores
+
+Automated billing for daily transactions.
+
+### Freelancers
+
+Generate and deliver invoices without billing software.
+
+### Service Providers
+
+Automate billing and invoice distribution.
+
+---
+
+## 🧠 Skills Demonstrated
+
+* Workflow Automation
+* Business Process Automation
 * AI Integration
-* API Development
-* Cloud Architecture
-* Document Processing
-* Automation Design
-* Business Solution Development
+* API Integration
+* PDF Generation
+* Cloud Storage
+* Email Automation
+* JavaScript Development
+* Webhook Handling
 * System Integration
-* Low-Code Platforms
-* Product Thinking
+* Low-Code Development
+
+---
+
+## 📌 Project Highlights
+
+* End-to-end invoice automation workflow
+* Real-world business use case
+* WhatsApp-based user experience
+* AI-assisted invoice processing
+* Automated PDF generation
+* Cloud-hosted document delivery
+* Professional workflow orchestration using n8n
+
+---
+
+## 📌 Project Status
+
+This project was originally developed and demonstrated during a cloud-hosted trial environment using n8n and third-party services.
+
+The original deployed workflow is no longer active because the trial infrastructure and associated temporary services have expired.
+
+However, the complete system architecture, workflow design, implementation approach, screenshots, and demonstration outputs have been preserved in this repository.
+
+The solution can be recreated and redeployed using the same technology stack:
+
+* n8n
+* Gupshup WhatsApp API
+* Gemini AI
+* Gotenberg
+* Cloudinary
+* SMTP / Gmail
+
+This repository serves as a portfolio showcase of the architecture, automation workflow, and business process implementation developed during the project.
+
+**Note:** The screenshots included in this repository were captured from successful executions of the original workflow during the development and testing phase.
+
+---
+
+## 👨‍💻 Author
+
+**Aadi Jain**
+
+B.Tech Student | Software Development Enthusiast
+
+Built to simplify invoice generation for small businesses using workflow automation and AI-powered processing.
